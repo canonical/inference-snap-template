@@ -1,0 +1,12 @@
+name: inference-snap-workshop
+base: ubuntu@24.04
+sdks:
+  # Useful for testing the SDK in isolation, but not required to run the skills
+  - name: vscode-remote
+  - name: opencode
+    channel: latest/stable
+  - name: inference-snap-maker
+    channel: latest/edge #TODO: Switch to stable once the SDK is released 
+
+actions:
+  opencode: opencode "$@"

@@ -16,10 +16,12 @@ engines: cpu, nvidia-gpu
 # {snap-friendly-name} inference snap
 [![{snap-name}](https://snapcraft.io/{snap-name}/badge.svg)](https://snapcraft.io/{snap-name})
 
+> This README is a template. Values wrapped in `{...}` are replaced during the packing pipeline.
+
 Install [{snap-friendly-name}]({model-card}), optimized directly for your hardware.
 This package deploys a high-performance runtime for local inference across arm and x86 platforms. It runs efficiently on pure CPU or leverages hardware acceleration via {NVIDIA, Intel, or AMD GPUs}.
 
-Before starting. get the necessary [drivers](https://documentation.ubuntu.com/inference-snaps/how-to/setup/drivers/) for using an accelerator.
+Before starting, install the necessary [drivers](https://documentation.ubuntu.com/inference-snaps/how-to/setup/drivers/) for your accelerator.
 
 | Engine | Arch | Description |
 |--------------|--------------|-------------|
@@ -42,9 +44,9 @@ sudo snap install {snap-name}
 | Key | Value |
 |-----|-------|
 | http.port | {http-port}   |
-| http.host | localhost |
+| http.host | 127.0.0.1 |
 | webui.http.port | {webui-http-port}  |
-| webui.http.host | localhost |
+| webui.http.host | 127.0.0.1 |
 
 ## Resources
 
@@ -58,7 +60,7 @@ sudo snap install {snap-name}
 
 Clone this repo with its submodules:
 ```shell
-git clone --recurse-submodules https://github.com/{repository}
+git clone --recurse-submodules https://github.com/{owner}/{repository}
 ```
 
 Prepare the required models by running `make download-models`.

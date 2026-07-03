@@ -1,18 +1,28 @@
 <!--
-<snap-name>: This is the name of the snap. The name that is registered on the snap store and also the name of the cli command.
-<snap-friendly-name>: This name is just a friendly name for the snap, it can be used in the README and nowhere else.
-<api-port>: The port that the inference snap will use for its API server.
-<webui-port>: The port that the inference snap will use for its webui server.
-<http-host>: The host that the inference snap will use for its API and webui servers.
+Replace the following placeholders in the README:
+- <snap-name>: This is the name of the snap. The name that is registered on the snap store and also the name of the cli command.
+- <snap-friendly-name>: This name is just a friendly name for the snap, it can be used in the README and nowhere else.
+- <api-port>: The port that the inference snap will use for its API server.
+- <webui-port>: The port that the inference snap will use for its webui server.
+- <http-host>: The host that the inference snap will use for its API and webui servers.
+- <optimized-engines>: List of engines for this snap. 
 -->
 
 # <snap-friendly-name> inference snap
+[![mymodel](https://snapcraft.io/mymodel/badge.svg)](https://snapcraft.io/mymodel)
 
-Available engines:
-* intel-cpu
-* intel-gpu
-* nvidia-cuda
-* cpu
+Install [My Model](Model card URL), optimized directly for your hardware.
+This package deploys a high-performance runtime for local inference across arm and x86 platforms. It runs efficiently on pure CPU or leverages hardware acceleration via NVIDIA, Intel, or AMD GPUs.
+
+Before starting. get the necessary [drivers](https://documentation.ubuntu.com/inference-snaps/how-to/setup/drivers/) for using an accelerator.
+
+| Engine | Arch | Description |
+|--------------|--------------|-------------|
+| cpu | amd64, arm64 | Optimized for several CPU variants (x86, armv8, armv9) |
+| intel-cpu | amd64 | Optimized for best performance on Intel CPUs |
+| intel-gpu | amd64 | Optimized for Intel integrated and discrete graphics |
+| nvidia-gpu | amd64, arm64 | CUDA-enabled GPU acceleration |
+| amd-gpu | amd64 | Optimized for AMD integrated and discrete graphics |
 
 #### Install
 ```

@@ -1,35 +1,42 @@
 <!--
-<snap-name>: This is the name of the snap. The name that is registered on the snap store and also the name of the cli command.
-<snap-friendly-name>: This name is just a friendly name for the snap, it can be used in the README and nowhere else.
-<api-port>: The port that the inference snap will use for its API server.
-<webui-port>: The port that the inference snap will use for its webui server.
-<http-host>: The host that the inference snap will use for its API and webui servers.
+# This is the name of the snap. The name that is registered on the snap store and also the name of the cli command.
+snap-name: gemma4
+# This name is just a friendly name for the snap, it can be used in the README and nowhere else.
+snap-friendly-name: Gemma 4
+# URL to model card from the model publisher
+model-card: https://ai.google.dev/gemma/docs/core/model_card_4
+# The port that the inference snap will use for its API server.
+http-port: 8080
+# The port that the inference snap will use for its webui server.
+webui-http-port: 8081
+# Optimizations
+engines: cpu, nvidia-gpu
 -->
 
-# <snap-friendly-name> inference snap
+# {snap-friendly-name} inference snap
+[![{snap-name}](https://snapcraft.io/{snap-name}/badge.svg)](https://snapcraft.io/{snap-name})
 
-Available engines:
-* intel-cpu
-* intel-gpu
-* nvidia-cuda
-* cpu
+Install [{snap-friendly-name}]({model-card}), optimized directly for your hardware.
+This package deploys a high-performance runtime for local inference across arm and x86 platforms. It runs efficiently on pure CPU or leverages hardware acceleration via {NVIDIA, Intel, or AMD GPUs}.
+
+Before starting. get the necessary [drivers](https://documentation.ubuntu.com/inference-snaps/how-to/setup/drivers/) for using an accelerator.
 
 #### Install
 ```
-sudo snap install <snap-name>
+sudo snap install {snap-name}
 ```
 #### Use
 ```
-<snap-name> --help
+{snap-name} --help
 ```
 
-
-#### Default ports
-| Configuration |              |
-|---------------|--------------|
-| http server   | <api-port>   |
-| webui server  | <webui-port> |
-| http host     | <http-host>  |
+#### Default configurations
+| Key | Value |
+|-----|-------|
+| http.port | {http-port}   |
+| http.host | localhost |
+| webui.http.port | {webui-http-port}  |
+| webui.http.host | localhost |
 
 ## Resources
 
@@ -43,7 +50,7 @@ sudo snap install <snap-name>
 
 Clone this repo with its submodules:
 ```shell
-git clone --recurse-submodules https://github.com/[repository]
+git clone --recurse-submodules https://github.com/{repository}
 ```
 
 Prepare the required models by running `make download-models`.
@@ -55,7 +62,7 @@ snapcraft pack -v
 
 Refer to the `./dev` directory for additional development tools.
 
-## Pack a snap with AI agents
+## Pack the snap with AI agents
 Clone the [inference-snaps-sdk](https://github.com/canonical/inference-snaps-sdk) and build it:
 
 ```shell

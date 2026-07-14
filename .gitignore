@@ -8,9 +8,3 @@ stage/
 .workshop.lock
 # Snapcraft build state
 .craft/
-
-# Build tooling fetched by the Makefile (llama-gguf-split)
-.tools/
-
-# Dev tools submodule
-dev/

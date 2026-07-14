@@ -1,7 +1,7 @@
 <!--
 # This is the name of the snap. The name that is registered on the snap store and also the name of the cli command.
 snap-name: gemma4
-# This name is just a friendly name for the snap, it can be used in the README and nowhere else.
+# This name is just a friendly name for the snap, it can be used in the documentation
 snap-friendly-name: Gemma 4
 # URL to model card from the model publisher
 model-card: https://ai.google.dev/gemma/docs/core/model_card_4
@@ -16,7 +16,7 @@ engines: cpu, nvidia-gpu
 # {snap-friendly-name} inference snap
 [![{snap-name}](https://snapcraft.io/{snap-name}/badge.svg)](https://snapcraft.io/{snap-name})
 
-> This README is a template. Values wrapped in `{...}` are replaced during the packing pipeline.
+> This README is a template. Fields wrapped in `{...}` should be replaced with concrete values. If you use an agentic workflow using the included [workshop](#develop-this-snap-in-workshop), the values will get filled automatically.
 
 Install [{snap-friendly-name}]({model-card}), optimized directly for your hardware.
 This package deploys a high-performance runtime for local inference across arm and x86 platforms. It runs efficiently on pure CPU or leverages hardware acceleration via {NVIDIA, Intel, or AMD GPUs}.
@@ -29,7 +29,7 @@ Before starting, install the necessary [drivers](https://documentation.ubuntu.co
 | intel-cpu | amd64 | Optimized for best performance on Intel CPUs |
 | intel-gpu | amd64 | Optimized for Intel integrated and discrete graphics |
 | nvidia-gpu | amd64, arm64 | CUDA-enabled GPU acceleration |
-| amd-gpu | amd64 | Optimized for AMD integrated and discrete graphics |
+| {engine} | {arch} | {description} |
 
 #### Install
 ```
@@ -72,16 +72,9 @@ snapcraft pack -v
 
 Refer to the `./dev` directory for additional development tools.
 
-## Pack the snap with AI agents
-Clone the [inference-snaps-sdk](https://github.com/canonical/inference-snaps-sdk) and build it:
+## Develop this snap in a workshop
 
-```shell
-git clone https://github.com/canonical/inference-snaps-sdk.git
-cd inference-snaps-sdk
-sdkcraft try
-```
-
-Then you can start the `workshop` environment and pack your snap with AI agents:
+Start the `workshop` environment and pack the snap with AI agents:
 
 ```shell
 workshop launch
@@ -89,4 +82,4 @@ workshop shell
 opencode
 ```
 
-Choose the preferred LLM in opencode and prompt `start packing pipeline` to pack your snap with AI agents.
+Choose the preferred LLM in opencode and prompt `start packing pipeline` to start the snap creation process. The snap will be built and installed automatically in the workshop environment.

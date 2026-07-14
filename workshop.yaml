@@ -6,7 +6,8 @@ sdks:
   - name: opencode
     channel: latest/stable
     # The SDK should be cloned inside the workshop directory and built with `sdkcraft try` before launching the workshop
-  - name: try-inference-snaps-sdk # TODO take this from the store
+  - name: inference-snaps-sdk
+    channel: latest/edge #TODO: Switch to stable once the SDK is released 
 
 actions:
   opencode: opencode "$@"

@@ -5,8 +5,7 @@ sdks:
   - name: vscode-remote
   - name: opencode
     channel: latest/stable
-    # The SDK should be cloned inside the workshop directory and built with `sdkcraft try` before launching the workshop
-  - name: inference-snaps-sdk
+  - name: inference-snap-maker
     channel: latest/edge #TODO: Switch to stable once the SDK is released 
 
 actions:

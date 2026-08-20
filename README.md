@@ -1,6 +1,6 @@
 ---
 #
-# This YAML frontmatter information is read by the AI agent during snap creation and then removed from the README.
+# This YAML frontmatter is read by an AI agent during snap creation and then removed from the README.
 #
 
 # Snap name. This is exposed as a command when installing the snap.
@@ -17,10 +17,27 @@ webui-http-port: 8081
 engines: cpu, nvidia-gpu
 ---
 
+> [!NOTE]
+> This README is a template that is be read and completed by an AI agent to create an inference snap.
+> 
+> Complete the [Makefile](./Makefile) and the above YAML frontmatter. Leave everything else to the AI agent.
+> Fields wrapped in `{...}` will be replaced with concrete values by the AI agent. This note and the YAML frontmatter will be deleted.
+>
+> Launch a [Workshop](https://ubuntu.com/workshop) environment with everything you need to create the snap:
+> ```shell
+> workshop launch
+> workshop shell
+> opencode
+> ```
+> Choose the preferred LLM in OpenCode and prompt `start packing pipeline` to start the snap creation process.
+> The snap will be developed, built and tested automatically in the workshop environment.
+> 
+> If this is the first time doing this, refer to [Using an AI agent to create an inference snap](https://documentation.ubuntu.com/inference-snaps/tutorial/agentic-inference-snap-creation/) tutorial.
+
 # {snap-title} inference snap
 [![{snap-name}](https://snapcraft.io/{snap-name}/badge.svg)](https://snapcraft.io/{snap-name})
 
-> This README is a template to be used by AI agent (see [workshop](#develop-this-snap-in-workshop)). Fields wrapped in `{...}` will be replaced with concrete values from the YAML frontmatter by the AI agent.
+
 
 {model description}
 
@@ -73,17 +90,3 @@ Build and install snap:
 make build
 make install
 ```
-
-
-## Develop this snap in a Workshop
-
-Start the [Workshop](https://ubuntu.com/workshop) environment and create the snap with AI agents:
-
-```shell
-workshop launch
-workshop shell
-opencode
-```
-
-Choose the preferred LLM in OpenCode and prompt `start packing pipeline` to start the snap creation process.
-The snap will be developed, built and tested automatically in the workshop environment.

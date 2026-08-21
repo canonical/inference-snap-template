@@ -1,10 +1,13 @@
+# Snap build artifacts
 *.snap
 *.comp
 parts/
 prime/
 stage/
-*.gguf
-.venv/
 .workshop.lock
-# Snapcraft build state
 .craft/
+.snapd-relocate/
+
+# Model weight files
+components/
+*.gguf

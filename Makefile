@@ -5,7 +5,9 @@ SHELL := /bin/bash
 # Always run `hf` via pipx to avoid relying on local `hf` installations.
 hf := pipx run --spec "huggingface_hub[cli]" hf
 
-SNAP_NAME ?= gemma4 # TODO: Replace with snap name
+# TODO: Replace with snap name
+SNAP_NAME ?= gemma4 
+
 ENGINE ?= cpu
 
 all: help
@@ -56,9 +58,9 @@ init-submodules:
 	fi
 
 # TODO: Update to match the expected model(s):
-download-models: download-model-e4b-q4-k-m-gguf
+download-models: download-model-E4B-Q4_K_M
 
 # TODO: Update to match the model. Add one target per model.
-download-model-e4b-q4-k-m-gguf:
+download-model-E4B-Q4_K_M:
 	$(hf) download unsloth/gemma-4-E4B-it-GGUF gemma-4-E4B-it-Q4_K_M.gguf \
 		--local-dir components/model-e4b-q4-k-m-gguf/

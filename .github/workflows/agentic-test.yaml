@@ -1,0 +1,19 @@
+name: Agentic Snap Test
+
+on:
+  schedule:
+    - cron: "50 5 * * 4" # Weekly on Thursday
+
+jobs:
+  ai-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run test
+        uses: canonical/inference-snaps-dev/.github/actions/agentic-test@v2
+        with:
+          # TODO: Replace with the snap name.
+          snap-name: <snap-name>
+          snap-channel: beta
+          create-issues: true
+          openrouter-api-key: ${{ secrets.OPENROUTER_API_KEY }}
+          issue-create-token: ${{ secrets.ISSUE_CREATE_TOKEN }}

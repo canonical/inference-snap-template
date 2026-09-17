@@ -63,4 +63,4 @@ download-models: download-model-E4B-Q4_K_M
 # TODO: Update to match the model. Add one target per model.
 download-model-E4B-Q4_K_M:
 	$(hf) download unsloth/gemma-4-E4B-it-GGUF gemma-4-E4B-it-Q4_K_M.gguf \
-		--local-dir components/model-e4b-q4-k-m-gguf/
+		--local-dir model-weights/model-e4b-q4-k-m-gguf/

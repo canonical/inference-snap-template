@@ -9,5 +9,5 @@ stage/
 .snapd-relocate/
 
 # Model weight files
-components/
+model-weights/
 *.gguf

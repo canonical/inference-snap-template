@@ -15,6 +15,8 @@ http-port: 8080
 webui-http-port: 8081
 # Optimizations
 engines: cpu, nvidia-gpu
+# Icon
+icon: https://link-to-your-icon.com/icon.png or <local-path-to-icon.png> or empty
 ---
 
 > [!NOTE]
